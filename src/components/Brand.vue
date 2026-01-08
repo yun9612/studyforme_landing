@@ -54,17 +54,35 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const isLoaded = ref(false);
+let observer = null;
 
 const handleDownload = () => {
-  window.open("https://your-app-store-link", "_blank");
+  window.open('https://your-app-store-link', '_blank');
 };
 
 onMounted(() => {
-  setTimeout(() => {
-    isLoaded.value = true;
-  }, 100);
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        isLoaded.value = entry.isIntersecting;
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  const section = document.getElementById('brand');
+  if (section) {
+    observer.observe(section);
+  }
+});
+
+onUnmounted(() => {
+  if (observer) {
+    observer.disconnect();
+  }
 });
 </script>
+

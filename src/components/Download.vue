@@ -69,33 +69,38 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const isVisible = ref(false);
+let observer = null;
 
 const downloadApp = (platform) => {
-  if (platform === "ios") {
-    window.open("https://apps.apple.com/your-app-link", "_blank");
-  } else if (platform === "android") {
-    window.open("https://play.google.com/store/apps/your-app-link", "_blank");
+  if (platform === 'ios') {
+    window.open('https://apps.apple.com/your-app-link', '_blank');
+  } else if (platform === 'android') {
+    window.open('https://play.google.com/store/apps/your-app-link', '_blank');
   }
 };
 
 onMounted(() => {
-  const observer = new IntersectionObserver(
+  observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          isVisible.value = true;
-        }
+        isVisible.value = entry.isIntersecting;
       });
     },
     { threshold: 0.2 }
   );
 
-  const section = document.getElementById("download");
+  const section = document.getElementById('download');
   if (section) {
     observer.observe(section);
+  }
+});
+
+onUnmounted(() => {
+  if (observer) {
+    observer.disconnect();
   }
 });
 </script>

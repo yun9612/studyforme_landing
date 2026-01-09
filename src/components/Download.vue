@@ -1,6 +1,6 @@
 <!-- components/Download.vue -->
 <template>
-  <section id="download" class="bg-[#652bdf] flex items-center justify-center py-30">
+  <section id="download" class="bg-[#652bdf] flex items-center justify-center py-12 md:py-20">
     <div class="container mx-auto px-4">
       <div
         class="text-center transition-all duration-1000"

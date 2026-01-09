@@ -7,7 +7,7 @@
     <div class="container mx-auto max-w-6xl px-4">
       <!-- 헤더 -->
       <div
-        class="mb-15 transition-all duration-1000 text-center md:text-left"
+        class="mb-10 md:mb-16 transition-all duration-1000 text-center md:text-left"
         :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'">
         <p class="text-[#652BDF] text-sm md:text-base font-bold mb-4">User Review</p>
         <h2 class="text-3xl md:text-[54px] font-bold text-gray-900 mb-2">스터디포미 사용 후</h2>

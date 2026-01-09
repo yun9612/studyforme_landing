@@ -26,7 +26,7 @@
           <!-- 다운로드 버튼 -->
           <button
             class="inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-white text-white rounded-full hover:bg-white hover:text-purple-600 transition-all duration-300 text-[15px] md:text-base font-medium"
-            @click="handleDownload">
+            @click="scrollToDownload">
             <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
@@ -37,6 +37,15 @@
             <span class="hidden md:inline">스터디포미 다운받기</span>
             <span class="inline md:hidden">앱 다운로드</span>
           </button>
+        </div>
+
+        <!-- 스크롤 인디케이터 -->
+        <div
+          class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce transition-all duration-1000 delay-500"
+          :class="isLoaded ? 'opacity-100' : 'opacity-0'">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
         </div>
 
         <!-- 스마트폰 이미지 -->
@@ -59,8 +68,14 @@ import { ref, onMounted, onUnmounted } from "vue";
 const isLoaded = ref(false);
 let observer = null;
 
-const handleDownload = () => {
-  window.open("https://your-app-store-link", "_blank");
+const scrollToDownload = () => {
+  const downloadSection = document.getElementById("download");
+  if (downloadSection) {
+    downloadSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
 };
 
 onMounted(() => {

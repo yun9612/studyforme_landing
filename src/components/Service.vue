@@ -1,7 +1,7 @@
 <!-- components/Service.vue -->
 <template>
   <section id="service" class="min-h-screen bg-white flex items-center justify-center py-20">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto max-w-6xl px-4">
       <!-- 헤더 -->
       <div
         class="text-center mb-16 transition-all duration-1000"
@@ -16,14 +16,14 @@
         class="flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-20 transition-all duration-1000 delay-200"
         :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'">
         <!-- 이미지 -->
-        <div class="w-full flex justify-center md:justify-start">
-          <div class="relative w-full max-w-md">
+        <div class="w-2/3 md:w-full flex justify-center md:justify-start">
+          <div class="relative w-full max-w-md overflow-hidden rounded-4xl">
             <img src="/images/box__등록.png" alt="학습경험 입력" class="w-full h-auto" />
           </div>
         </div>
 
         <!-- 텍스트 -->
-        <div class="w-full text-left">
+        <div class="w-5/6 md:w-full text-left">
           <p class="text-[#652BDF] text-sm md:text-[22px] font-bold mb-3">학습 히스토리 관리</p>
           <h3 class="text-2xl md:text-[44px] font-bold text-gray-900 mb-4">빠른 학습경험 입력</h3>
           <p class="text-gray-600 text-base md:text-[22px]">
@@ -35,17 +35,17 @@
 
       <!-- 서비스 카드 2 -->
       <div
-        class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16 transition-all duration-1000 delay-400"
+        class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16 mb-20 transition-all duration-1000 delay-400"
         :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'">
         <!-- 이미지 -->
-        <div class="w-full flex justify-center md:justify-end">
-          <div class="relative w-full max-w-md">
+        <div class="w-2/3 md:w-full flex justify-center md:justify-end">
+          <div class="relative w-full max-w-md overflow-hidden rounded-4xl">
             <img src="/images/box_데이터.png" alt="학습경험" class="w-full h-auto" />
           </div>
         </div>
 
         <!-- 텍스트 -->
-        <div class="w-full text-left">
+        <div class="w-5/6 md:w-full text-left">
           <p class="text-[#652BDF] text-sm md:text-[22px] font-bold mb-3">학습결과 데이터 분석</p>
           <h3 class="text-2xl md:text-[44px] font-bold text-gray-900 mb-4">
             AI가 분석해주는<br />
@@ -60,14 +60,14 @@
         class="flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-20 transition-all duration-1000 delay-200"
         :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'">
         <!-- 이미지 -->
-        <div class="w-full md:w-1/2 flex justify-center md:justify-start">
-          <div class="relative w-full max-w-md">
+        <div class="w-2/3 md:w-full flex justify-center md:justify-start">
+          <div class="relative w-full max-w-md overflow-hidden rounded-4xl">
             <img src="/images/box_추천.png" alt="문제집 추천" class="w-full h-auto" />
           </div>
         </div>
 
         <!-- 텍스트 -->
-        <div class="w-full md:w-1/2 text-left">
+        <div class="w-5/6 md:w-full text-left">
           <p class="text-[#652BDF] text-sm md:text-[22px] font-bold mb-3">문제집 추천</p>
           <h3 class="text-2xl md:text-[44px] font-bold text-gray-900 mb-4">AI가 추천해주는<br />문제집 확인</h3>
           <p class="text-gray-600 text-base md:text-[22px]">
@@ -82,14 +82,14 @@
         class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16 transition-all duration-1000 delay-400"
         :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'">
         <!-- 이미지 -->
-        <div class="w-full md:w-1/2 flex justify-center md:justify-end">
-          <div class="relative w-full max-w-md">
+        <div class="w-2/3 md:w-full flex justify-center md:justify-end">
+          <div class="relative w-full max-w-md overflow-hidden rounded-4xl">
             <img src="/images/box_쇼핑.png" alt="문제집 구입" class="w-full h-auto" />
           </div>
         </div>
 
         <!-- 텍스트 -->
-        <div class="w-full md:w-1/2 text-left">
+        <div class="w-5/6 md:w-full text-left">
           <p class="text-[#652BDF] text-sm md:text-[22px] font-bold mb-3">문제집 구입</p>
           <h3 class="text-2xl md:text-[44px] font-bold text-gray-900 mb-4">
             추천받은 문제집을<br />

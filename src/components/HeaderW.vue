@@ -3,7 +3,7 @@
   <header 
     class="fixed top-0 w-full transition-all duration-500 hidden md:block"
     :class="[
-      isScrolled ? 'bg-[#8453ee] shadow-lg py-4 z-50' : 'bg-transparent py-4 z-50',
+      isScrolled ? 'bg-[#652bdf] shadow-lg py-4 z-50' : 'bg-transparent py-4 z-50',
     ]"
   >
     <div 
